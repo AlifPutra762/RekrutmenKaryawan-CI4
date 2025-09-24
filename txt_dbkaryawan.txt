@@ -1,0 +1,59 @@
+Database karyawan
+
+Tabel pelamar :
+id_pelamar (varchar)
+nama_pelamar
+foto_pelamar (jpg)
+posisi
+email_pelamar
+slug
+no_hp
+portofolio_pelamar(pdf)
+cv_pelamar (pdf)
+dokumen pendukung (pdf) (tambah)
+tanggal (tambah)
+waktu (tambah)
+created_at
+updated_at
+
+
+Tabel lowongan:
+id_lowongan
+posisi_lowongan
+slug
+deskripsi_lowongan
+jumlah_diterima
+created_at
+update_at
+
+
+manggil base base_url
+<?= base_url(); ?>
+
+<a href="/pelamar/delete/<?= $pelamar['id_pelamar']; ?>" class="btn btn-danger">Delete</a>
+
+
+
+Catatan error :
+1. Edit 1 pdf tidak bisa
+2. Validasi di ckeditor5 gagal
+
+
+$currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $terima = $this->diterimaModel->search($keyword);
+        } else {
+            $terima = $this->diterimaModel;
+        }
+
+        $data = [
+            // 'terima' => $this->diterimaModel->getDiterima(), // Mengambil data pelamar yang diterima
+            'terima' => $terima->paginate(5),
+            'pager' => $this->diterimaModel->pager,
+            'currentPage' => $currentPage
+        ];
+        // Ambil semua data pelamar diterima
+        return view('admin/v_pelamarditerima', $data);
+    }

@@ -1,0 +1,114 @@
+.foto{
+    width: 100px;
+}
+
+.table > tbody > tr > *{
+
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
+
+.nav-link {
+    text-decoration: none;
+    color: #555; /* Warna teks standar */
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px; /* Sudut tumpul */
+    transition: all 0.3s ease-in-out; /* Efek transisi saat hover */
+}
+
+
+
+.nav-link.active {
+    background-color: #0056b3; /* Warna latar belakang link yang aktif */
+    color: white; /* Warna teks putih saat aktif */
+    font-weight: 700; /* Teks lebih tebal saat aktif */
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.4); /* Bayangan lebih intens saat aktif */
+}
+
+
+
+
+/* Menambahkan efek animasi pada link ketika hover */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.small-box {
+    position: relative;
+    background-color: #17a2b8;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+.small-box:hover {
+    transform: translateY(-5px);
+}
+.small-box .icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 3rem;
+    opacity: 0.3;
+}
+.small-box-footer {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.small-box-footer:hover {
+    color: #fff;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
