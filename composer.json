@@ -12,6 +12,7 @@
     "require": {
         "php": "^8.2",
         "almasaeed2010/adminlte": "4.0.0-beta2",
+        "ext-intl": "*",
         "codeigniter4/framework": "^4.0",
         "myth/auth": "^1.2"
     },
